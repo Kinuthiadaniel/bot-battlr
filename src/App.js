@@ -1,11 +1,19 @@
-import BotColletion from './components/BotCollection';
+import {useState, useEffect} from "react"
+import BotCollection from "./components/BotCollection"
+import MyBotArmy from "./components/MyBotArmy"
+const App =()=>{
+  const [bots, setBots] = useState([])
 
-
-function App() {
+  useEffect(() => {
+    fetch("http://localhost:3000/bots")
+   .then(resp => resp.json())
+   .then(data => setBots(data))
+  }, [])
   return (
-  <>
-  <BotColletion/>
-  </>
+    <div className="">
+      <BotCollection bots = {bots}/>
+      {/* <MyBotArmy bots = {bots}/> */}
+    </div>
   );
 }
 
