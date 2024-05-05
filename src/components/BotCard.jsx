@@ -1,9 +1,10 @@
-const BotCard = ({bot})=>{
+const BotCard = ({bot, handleSelectedBots})=>{
+
 return(
-      <div>
-           
+      <div onClick = {()=>handleSelectedBots}>
+        
             <img src={bot.avatar_url} alt={bot.name} />
-            <h1>Name : {bot.name}</h1>
+            <h3>Name : {bot.name}</h3>
             <p>Health: {bot.health}</p>
             <p>Damage: {bot.damage}</p>
             <p>Armor: {bot.armor}</p>
