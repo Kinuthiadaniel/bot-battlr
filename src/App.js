@@ -6,27 +6,38 @@ import MyBotArmy from './components/MyBotArmy';
 import './App.css';
 
 function App() {
-  const [army, setArmy] = useState([]);
+  const [selectedBot, setSelectedBot] = useState([]);
 
-  const addToArmy = (bot) => {
-    if (!army.some((b) => b.id === bot.id)) {
-      setArmy([...army, bot]);
+  const addBotArmy = (bot) => {
+    
+    if (!selectedBot.some((bots) => bots.id === bot.id)) {
+      setSelectedBot([...selectedBot, bot]);
     }
   };
 
   const removeFromArmy = (botId) => {
-    const updatedArmy = army.filter((bot) => bot.id !== botId);
-    setArmy(updatedArmy);
+    const updatedArmy = selectedBot.filter((bot) => bot.id !== botId);
+    setSelectedBot(updatedArmy);
   };
+
+  // const HandleAddToArmy = (bot) => {
+  //   addBotArmy(bot);
+  // }
+
+
 
   return (
     <div className="App">
-      <h1 className='text-center my-5'>Battle bots</h1>
+      <h1 className='text-center my-5'>Bot Battalion</h1>
 
-     
+      <div className='container'>
+        
+             <MyBotArmy army={selectedBot} removeFromArmy={removeFromArmy} />
+         
+      </div>
 
       <div>
-        <BotCollection addToArmy={addToArmy} />
+        <BotCollection addBotArmy={addBotArmy} />
       </div>
     </div>
   );

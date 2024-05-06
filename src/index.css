@@ -1,9 +1,5 @@
-.all-bots{
+/* .card-container{
   display: flex !important;
- column-gap: 2px;
+ gap: 20px;
   flex-wrap: wrap;
-}
-.card{
-  width: 200px;
- 
-}
+} */
