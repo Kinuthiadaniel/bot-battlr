@@ -6,7 +6,7 @@ const BotCollection = ({ addBotArmy }) => {
   const [bots, setBots] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/bots')
+    fetch('https://json-server-1-sc53.onrender.com/')
       .then((response) => {
         return response.json();
       })
@@ -22,7 +22,7 @@ const BotCollection = ({ addBotArmy }) => {
     addBotArmy(bot);
   }
   function deleteBot(bot) {
-    fetch(`http://localhost:3000/bots/${bot.id}`, {
+    fetch(`https://json-server-1-sc53.onrender.com/${bot.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

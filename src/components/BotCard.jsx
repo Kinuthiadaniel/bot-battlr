@@ -13,7 +13,9 @@ return(
             <p>Damage: {bot.damage}</p>
             <p>Armor: {bot.armor}</p>
             <p> catchphrase: {bot.catchphrase}</p>
-            
+            <Link >
+            <button>View Details </button>
+            </Link>
           
             
       </div>
